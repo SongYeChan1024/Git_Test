@@ -137,6 +137,11 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+    public void Heal(float amount)
+    {
+        hp = Mathf.Min(hp + amount, maxHP);
+    }
+
     private void Die()
     {
         onPlayerDie?.Invoke();

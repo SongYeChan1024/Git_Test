@@ -10,6 +10,8 @@ namespace GameManager
 
         private EnemyManager enemyManager = null;
 
+        private ItemManager itemManager = null;
+
         [SerializeField] private int score = 0;
 
         private UIManager uiManager;
@@ -18,6 +20,7 @@ namespace GameManager
         {
             player = GetComponentInChildren<Player>();
             enemyManager = GetComponentInChildren<EnemyManager>();
+            itemManager = GetComponentInChildren<ItemManager>();
             uiManager = GetComponentInChildren<UIManager>();
         }
 
@@ -25,6 +28,7 @@ namespace GameManager
         {
             player.Init(OnGameOver);
             enemyManager.Init(player, AddScore);
+            itemManager.Init();
             uiManager.Init();
         }
 
